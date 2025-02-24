@@ -1,0 +1,12 @@
+<h1>Your question:</h1>
+<h1 class="alert alert-primary"><%= @question %></h1>
+<h1>Coach Answer:</h1>
+<h1 class="alert alert-primary"><% if @question.include?('?') %>
+  <%= 'Silly question, get dressed and go to work!' %>
+<% elsif @question.include?('I am going to work right now!') %>
+  <%="You're pretty good..."%>
+<% else %>
+  <%= "I don't care, get dressed and go to work!" %>
+<% end %></h1>
+
+<%= link_to "Ask Coach again...", ask_path %>
